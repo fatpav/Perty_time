@@ -7,9 +7,9 @@ from app.models.event import *
 def index():
     return render_template('index.html', title = 'Home', events = events)
 
-@app.route('/add-event', methods=['post'])
+@app.route('/add-event', methods=['POST'])
 def add_event():     
-    event_name = request.form["name"]
+    event_name = request.form["event_name"]
     event_date = request.form["date"]
     event_guest_number = request.form["guest_number"]
     event_location = request.form["location"]
