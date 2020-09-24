@@ -4,12 +4,27 @@
     </head>
     <body>
         <h1>Paul & Steve's Magical Events</h1>
-            <ul>
-                {% for event in events %}
-                <li>
-                    {{ event.date }}: <br> {{event.name}}: <br> {{event.guest_number}}: <br> {{event.location}}: <br> {{ event.description}} 
-                </li>
-                {% endfor %}
-            </ul>
+        <h2>Add your fantastic new event</h2>
+           <form action="/add-event" method='post'>
+            <label for="title">Event Name</label>
+            <input required type="text" name="event" id="event" placeholder="Name your event">
+            <label for="title">When is your perty?</label>
+            <input type="date" name="date" id="date">
+            <label for="title">How many guests?</label>
+            <input type="number" min="0" name='guest_number' id='guest_number' placeholder="How many guests ?">
+            <label for="title">Where?</label>
+            <input type="text" name="location" id='location' placeholder="Where is your event ?">
+            <label for="title">Describe your event</label>
+            <textarea name="description" id="description" cols="60" rows="1"></textarea> 
+            <input type="submit" value = 'Add Perty'>      
+        </form> 
+            <h2>UPCOMING PERTIES</h2>
+                <ul>
+                    {% for event in events %}
+                    <li>
+                        {{ event.date }}: {{event.name}}: {{event.guest_number}}: {{event.location}}: {{ event.description}} 
+                    </li>
+                    {% endfor %}
+                </ul>
     </body>
 </html>
