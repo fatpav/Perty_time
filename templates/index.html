@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>{{ title }} - Paul & Steve's Magical Events</title>
+    </head>
+    <body>
+        <h1>Paul & Steve's Magical Events</h1>
+            <ul>
+                {% for event in events %}
+                <li>
+                    {{ event.date }}: <br> {{event.name}}: <br> {{event.guest_number}}: <br> {{event.location}}: <br> {{ event.description}} 
+                </li>
+                {% endfor %}
+            </ul>
+    </body>
+</html>
